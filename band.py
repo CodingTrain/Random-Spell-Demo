@@ -5,6 +5,13 @@ data = json.loads(open("instruments.json").read())
 instruments = data['instruments']
 
 band = random.sample(instruments, 10)
-print("The Randoms:\n")
+
+output = "The Randoms: \n"
+
 for instrument in band:
-    print(instrument)
+    output += instrument + "\n"
+
+print(output)
+
+with open('theband.txt', 'w') as file:
+    file.write(output)
